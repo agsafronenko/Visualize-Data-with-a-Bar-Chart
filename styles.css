@@ -1,0 +1,6 @@
+.bar {
+  fill: rgb(9, 191, 232);
+}
+.bar:hover {
+  fill: white;
+}
