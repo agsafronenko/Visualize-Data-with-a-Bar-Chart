@@ -1,6 +1,75 @@
+html,
+body {
+  height: 100%;
+  --main-color: rgb(34, 136, 239);
+  --tooltip-color: rgb(250, 246, 246, 0.9);
+  background-color: rgb(222, 221, 219);
+}
+
+#svg-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+svg {
+  margin: 0 auto;
+  display: block;
+  background-color: white;
+  box-shadow: 2px 2px 10px black;
+}
+
+#title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .bar {
-  fill: rgb(9, 191, 232);
+  fill: var(--main-color);
 }
 .bar:hover {
   fill: white;
+  cursor: pointer;
+  caret-color: var(--main-color);
+}
+
+#tooltip {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  opacity: 20%;
+  background-color: var(--tooltip-color);
+  width: fit-content;
+  height: fit-content;
+  color: var(--main-color);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#tooltip::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 10px solid var(--tooltip-color);
+  border-bottom: 5px solid transparent;
+  left: -9px;
+  top: 9px;
+}
+
+.note {
+  font-size: small;
+  font-style: italic;
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  font-size: small;
+  font-style: italic;
+  width: 99%;
+  font-weight: 600;
+  bottom: 7px;
+  text-align: center;
 }
